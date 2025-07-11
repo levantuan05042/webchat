@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/levantuan05042/config-repo
+          clone-on-start: true
+          default-label: main # ho?c master tùy nhánh chính c?a b?n
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
